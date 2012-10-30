@@ -59,8 +59,8 @@ class LogicielsController extends Zend_Controller_Action
                 if( $acl->isAllowed( $identity['Role'] ,'logiciels','add') ) {
                     $request = $this->getRequest();
                     $logicielForm = new Form_Logiciel();
-                    if ($this->getRequest()->isLogiciel()) {
-                            if ($logicielForm->isValid($request->getLogiciel())) {
+                    if ($this->getRequest()->isPost()) {
+                            if ($logicielForm->isValid($request->getPost())) {
                                     $model = new Model_DbTable_Logiciels();
                                     $model->saveLogiciel($logicielForm->getValues());
                                     $this->_redirect('index/index');
