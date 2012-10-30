@@ -10,7 +10,7 @@ class Form_Extensions extends Zend_Form
 		 */
 		if( Zend_Auth::getInstance()->hasIdentity()
 		&& $acl->isAllowed( $identity['Role'] ,'extensions','add') ) {
-			parent::__construct($options);
+			parent::__construct();
 			$this->setName('Extensions');
 			$id = new Zend_Form_Element_Hidden('id');
 			$name = new Zend_Form_Element_Text('name');

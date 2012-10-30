@@ -3,7 +3,7 @@ class Form_Logiciel extends Zend_Form
 {
 	public function __construct()
 	{
-		parent::__construct($options);
+		parent::__construct();
 		$this->setName('Logiciels');
 		$id = new Zend_Form_Element_Hidden('id');
 		$title = new Zend_Form_Element_Text('Title');

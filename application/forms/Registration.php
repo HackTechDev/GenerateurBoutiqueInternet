@@ -3,7 +3,7 @@ class Form_Registration extends Zend_Form
 {
 	public function __construct()
 	{
-		parent::__construct($options);
+		parent::__construct();
 		$this->setName('Registration');
 		$username = new Zend_Form_Element_Text('username');
 		$username->setLabel('Your Name')

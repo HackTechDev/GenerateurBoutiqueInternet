@@ -3,7 +3,7 @@ class Form_Login extends Zend_Form
 {
 	public function __construct()
 	{
-		parent::__construct($options);
+		parent::__construct();
 		$this->setName('UserLogin');
 		$username = new Zend_Form_Element_Text('username');
 		$username->setLabel('User Name')
