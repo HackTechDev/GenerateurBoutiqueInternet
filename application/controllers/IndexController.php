@@ -12,10 +12,10 @@ class IndexController extends Zend_Controller_Action
 	{
 		// action body
 		/*
-		 * Get new posts and paginate
+		 * Get new logiciels and paginate
 		 */
-		$posts = new Model_DbTable_Posts();
-		$result = $posts->getPosts();
+		$logiciels = new Model_DbTable_Logiciels();
+		$result = $logiciels->getLogiciels();
 		$page = $this->_getParam('page',1);
 		$paginator = Zend_Paginator::factory($result);
 		$paginator->setItemCountPerPage(2);

@@ -12,10 +12,10 @@
           <actionMethod actionName="index"/>
         </controllerFile>
         <controllerFile controllerName="error"/>
-        <controllerFile controllerName="posts">
+        <controllerFile controllerName="logiciels">
           <actionMethod actionName="index"/>
           <actionMethod actionName="view"/>
-          <actionMethod actionName="comments"/>
+          <actionMethod actionName="extensions"/>
           <actionMethod actionName="add"/>
           <actionMethod actionName="edit"/>
         </controllerFile>
@@ -31,19 +31,19 @@
           <viewControllerScriptsDirectory forControllerName="error">
             <viewScriptFile forActionName="error"/>
           </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="posts">
+          <viewControllerScriptsDirectory forControllerName="logiciels">
             <viewScriptFile forActionName="index"/>
           </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="posts">
+          <viewControllerScriptsDirectory forControllerName="logiciels">
             <viewScriptFile forActionName="view"/>
           </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="posts">
-            <viewScriptFile forActionName="comments"/>
+          <viewControllerScriptsDirectory forControllerName="logiciels">
+            <viewScriptFile forActionName="extensions"/>
           </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="posts">
+          <viewControllerScriptsDirectory forControllerName="logiciels">
             <viewScriptFile forActionName="add"/>
           </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="posts">
+          <viewControllerScriptsDirectory forControllerName="logiciels">
             <viewScriptFile forActionName="edit"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>

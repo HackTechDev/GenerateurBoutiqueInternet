@@ -1,0 +1,24 @@
+<div class="title"><?php echo $this->logiciel['Title']; ?></div>
+<div class="description"><?php echo $this->logiciel['Description'];  ?></div>
+<?php
+	$acl = new Model_Acl(); 
+	$identity = Zend_Auth::getInstance()->getIdentity();
+	if( Zend_Auth::getInstance()->hasIdentity() && $acl->isAllowed( $identity['Role'] ,'logiciels','edit') ) : ?>
+<div><a href="<?php echo $this->baseUrl(). $this->edit; ?>">Edit</a></div>
+<?php endif; ?> 
+<div class="extensions">
+	<?php if( count($this->extensions) ) : ?>
+		<?php foreach( $this->extensions as $extension ) : ?>
+			<div class="postedby"><a href="<?php echo $extension['Webpage']; ?>" ><?php echo $this->escape( $extension['Name'] ); ?></a> on <span><?php echo $this->escape( date( 'd-m-Y', strtotime($extension['Postedon']) ) ); ?></span></div>
+			<div class="extension"><?php echo $this->escape( $extension['Description'] ); ?></div>
+		<?php endforeach; ?>
+	<?php else : ?>
+	<div>No extensions</div>
+	<?php endif; ?>
+</div>
+<div class="newextensions"><?php if( Zend_Auth::getInstance()->hasIdentity() ) : 
+		echo $this->extensionsForm;
+	else :
+		?><?php 
+	endif;
+?></div>

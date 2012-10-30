@@ -1,10 +1,10 @@
 <?php
-class Form_Post extends Zend_Form
+class Form_Logiciel extends Zend_Form
 {
 	public function __construct()
 	{
 		parent::__construct($options);
-		$this->setName('Posts');
+		$this->setName('Logiciels');
 		$id = new Zend_Form_Element_Hidden('id');
 		$title = new Zend_Form_Element_Text('Title');
 		$title->setLabel('Title')

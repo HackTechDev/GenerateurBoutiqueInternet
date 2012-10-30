@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 
-.post {
+.logiciel {
 	margin: 0px;
 	padding: 10px 10px 10px 10px;
 }
@@ -19,7 +19,7 @@
 	font-size: 12px;
 }
 
-.commentscount {
+.extensionscount {
 	padding: 5px 0px 0px 0px;
 	font-family: sans-serif;
 	font-weight: normal;
@@ -32,11 +32,11 @@
 	padding: 10px 0px 0px 10px;
 }
 
-.comment {
+.extension {
 	padding: 5px 0px 0px 0px;
 }
 
-.comments {
+.extensions {
 	padding: 10px 10px 10px 10px;
 }
 
@@ -67,21 +67,6 @@ ul {
 	border: 1px solid #515B5C;
 }
 
-ul.user,ul.albums {
-	background-color: #FFFFFF;
-	border: 0px;
-	padding: 0px;
-}
-
-li.user,li.albums {
-	display: block;
-	float: left;
-	margin: 5px;
-	padding: 5px;
-	text-align: center;
-	background-color: #E0EAFF;
-	border: 1px solid #515B5C;
-}
 
 a {
 	color: #0056FF;
@@ -106,7 +91,3 @@ form.deleteForm {
 	display: inline;
 }
 
-img.thumb {
-	margin: 5px;
-	border: 0px;
-}

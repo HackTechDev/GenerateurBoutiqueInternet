@@ -16,13 +16,13 @@ class Model_Acl extends Zend_Acl
 
 		/* 
 		 * Add a role called user, which inherits from guest
-		 * Users can post comments in site
+		 * Users can logiciel extensions in site
 		 */
 		$this->addRole(new Zend_Acl_Role('user'), 'guest');
 		
 		/* 
 		 * Add a role called blogger, which inherits from user
-		 * Bloggers can post contents
+		 * Bloggers can logiciel contents
 		 */
 		$this->addRole(new Zend_Acl_Role('blogger'), 'user');
 		
@@ -32,21 +32,21 @@ class Model_Acl extends Zend_Acl
 		 */
 		$this->addRole(new Zend_Acl_Role('admin'), 'blogger');
 
-		//Add a resource called posts
-		$this->add(new Zend_Acl_Resource('posts'));
+		//Add a resource called logiciels
+		$this->add(new Zend_Acl_Resource('logiciels'));
 		
-		//Add a resource called posts
-		$this->add(new Zend_Acl_Resource('comments'));
+		//Add a resource called logiciels
+		$this->add(new Zend_Acl_Resource('extensions'));
 
 		//Finally, we want to allow guests to view pages
-		$this->allow('guest', 'posts', 'view');
+		$this->allow('guest', 'logiciels', 'view');
 
-		//User can add comments
-		$this->allow('user', 'comments', 'add');
+		//User can add extensions
+		$this->allow('user', 'extensions', 'add');
 		
-		// Bloggers can add, edit posts
-		$this->allow('blogger', 'posts', 'edit');
-		$this->allow('blogger', 'posts', 'add');
+		// Bloggers can add, edit logiciels
+		$this->allow('blogger', 'logiciels', 'edit');
+		$this->allow('blogger', 'logiciels', 'add');
 	}
 	
 	function test()
