@@ -29,10 +29,8 @@ class Form_Logiciel extends Zend_Form
 				->setAttrib('rows',20)
 				->setAttrib('cols',50)
 				->addFilter('StringTrim')
-/*				->addFilter('StripTags', $allowedTags)
- * 				Don't know why its not working ?
- */
 				->addValidator('NotEmpty');
+
 		$submit = new Zend_Form_Element_Submit('submit');
 		$submit->setAttrib('id', 'submitbutton');
 		$this->addElements( array( $id, $title, $description, $submit ));

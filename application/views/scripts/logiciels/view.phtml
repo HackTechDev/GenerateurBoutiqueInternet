@@ -15,10 +15,12 @@
 	<?php else : ?>
 	<div>No extensions</div>
 	<?php endif; ?>
-</div>
-<div class="newextensions"><?php if( Zend_Auth::getInstance()->hasIdentity() ) : 
+</div>  
+<br/>
+<div class="newextensions">
+    <?php if( Zend_Auth::getInstance()->hasIdentity() ) {
+        echo "Ajouter une extension";
 		echo $this->extensionsForm;
-	else :
-		?><?php 
-	endif;
-?></div>
+        }
+    ?>
+</div>

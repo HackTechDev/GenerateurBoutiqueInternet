@@ -1,10 +1,16 @@
-<?php if (count($this->paginator)): ?>
-<?php foreach ($this->paginator as $logiciel ): ?>
-<div class="logiciel">
-  <div class="title"><a href="<?php echo $this->baseUrl()."/logiciels/view/id/".$logiciel['id']; ?>"><?php echo $this->escape($logiciel['Title']); ?></a></div>
-  <div class="description"><?php echo nl2br(substr( strip_tags( $logiciel['Description']), 0 , 300)); ?></div>
-  <div class="extensionscount">Extensions : </div>
-</div>
-<?php endforeach; ?>
+<?php
+	$acl = new Model_Acl(); 
+	$identity = Zend_Auth::getInstance()->getIdentity();
+	if( Zend_Auth::getInstance()->hasIdentity() && $acl->isAllowed( $identity['Role'] ,'logiciels','edit') ) : ?>
+        <a href="/logiciels/add">Ajouter un logiciel</a><br/>
+		<?php if (count($this->paginator)): ?>
+		<?php foreach ($this->paginator as $logiciel ): ?>
+		<div class="logiciel">
+		  <div class="title"><a href="<?php echo $this->baseUrl()."/logiciels/view/id/".$logiciel['id']; ?>"><?php echo $this->escape($logiciel['Title']); ?></a></div>
+		  <div class="description"><?php echo nl2br(substr( strip_tags( $logiciel['Description']), 0 , 300)); ?></div>
+		  <div class="extensionscount">Extensions : </div>
+		</div>
+		<?php endforeach; ?>
+		<?php endif; ?>
+		<div class="pagination"><?php echo $this->paginationControl($this->paginator, 'Sliding', '/partials/my_pagination_control.phtml'); ?></div>
 <?php endif; ?>
-<div class="pagination"><?php echo $this->paginationControl($this->paginator, 'Sliding', '/partials/my_pagination_control.phtml'); ?></div>
